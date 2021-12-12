@@ -1,0 +1,29 @@
+<div *ngIf="weather">
+
+  <mat-card class="" >
+    <mat-card-header>
+      <mat-card-title>weather</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+      <label> LocalObservation</label>- {{weather?.LocalObservationDateTime}}<br>
+      <label> EpochTime</label> -{{weather?.EpochTime}}<br>
+      <label>  WeatherText</label>-{{weather?.WeatherText}}<br>
+      <label>WeatherIcon</label>-{{weather?.WeatherIcon}}<br>
+        <label> HasPrecipitation</label>-{{weather?.HasPrecipitation}}<br>
+        <label> PrecipitationType</label>-{{weather?.PrecipitationType}}<br>
+       <label>PrecipitationIntensity</label>-{{weather?.PrecipitationIntensity}}<br>
+         <label> IsDayTime</label>-{{weather?.IsDayTime}}<br>
+      <label> Temperature</label><br>
+        <label>     Metric</label>-{{weather?.Temperature?.Metric?.Value}}{{weather?.Temperature?.Metric?.Unit}}<br>
+      <label> Imperial </label>-{{weather?.Temperature?.Imperial?.Value}}{{weather?.Temperature?.Imperial?.Unit}}<br>
+         </p>
+
+     
+    </mat-card-content>
+    <mat-card-actions>
+  <a href="{{weather?.MobileLink}} "> MobileLink</a> 
+        <a href="{{weather?.Link}}"> Link </a> 
+    </mat-card-actions>
+  </mat-card>
+</div>

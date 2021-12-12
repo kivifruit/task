@@ -1,0 +1,24 @@
+
+<div>
+<div *ngIf="location&&currentWeather">
+<mat-card  >
+    <mat-card-header>
+      <mat-card-title>weather &details of Location</mat-card-title>
+      <label>Id</label>br>
+<div >{{location.Key}}</div>
+<label>Name</label><br>
+<div >{{location.LocalizedName}}</div><br>
+    </mat-card-header>
+    <mat-card-content>
+     <app-current-weather [weather]="currentWeather"></app-current-weather> 
+        <div *ngIf="addremov=='remove'">is favorite! Do you want to remove?</div>
+        <button (click)="addremove()" mat-raised-button color="primary">{{addremov}}</button>
+<div *ngIf="fivedaysforecast">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <forecast fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let forecast of fivedaysforecast" [forecast]="forecast"></forecast>
+    </div>
+    </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+</div>

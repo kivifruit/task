@@ -1,0 +1,20 @@
+
+
+
+<div *ngIf="FavorateLocations.length!=0">
+    <mat-card  >
+        <mat-card-header>
+          <mat-card-title>Favorites</mat-card-title>
+    <mat-card *ngFor="let location of FavorateLocations;let i=index">
+    <label>Id</label>
+    <div >{{location.Key}}</div>
+    <label>Name</label>
+    <div >{{location.LocalizedName}}</div>
+    <app-current-weather [weather]="currentWeather(i)"></app-current-weather>
+    <button mat-raised-button color="primary" (click)="details(location.Key)">details</button>
+    </mat-card>
+</mat-card-header>
+</mat-card>
+</div>
+
+    

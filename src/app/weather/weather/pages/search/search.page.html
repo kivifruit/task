@@ -1,0 +1,14 @@
+<form  (ngSubmit)="onSearchClick()">
+  <mat-form-field>
+    <input (keyup)="onInputKeyUp()" [(ngModel)]="searchText" name="byCity"
+     aria-labelledby="enter search text"
+           autofocus
+           class="form-control xxx-search-box-input" 
+           matInput maxlength="15" inputmode="tel" placeholder="Type City"  #nameInput
+             type="search"/>  </mat-form-field>
+           <div *ngIf="choose"><div *ngFor="let location of locations" (click)="check(location)">{{location.LocalizedName}}</div></div> 
+    <button [disabled]="isButtonDisabled" mat-raised-button color="primary" type="submit" >search</button>
+
+  </form>
+  <router-outlet></router-outlet>
+ 
